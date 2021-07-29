@@ -40,3 +40,5 @@ const NavLink = ({ href, as, onClick, children }) => {
     </Link>
   );
 };
+
+export default NavLink;

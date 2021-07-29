@@ -12,36 +12,30 @@ import storage from "lib/utils/storage";
 const NavbarContainer = styled("nav")`
   position: relative;
   padding: 0.5rem 1rem;
-
-  &.after {
+  &::after {
     content: "";
     display: table;
     clear: both;
   }
-
   @media (min-width: 544px) {
     border-radius: 0.25rem;
   }
 `;
 
-const NavbarPresentor = styled("div")`
+const NavbarPresenter = styled("div")`
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-
   @media (min-width: 544px) {
     max-width: 576px;
   }
-
   @media (min-width: 768px) {
     max-width: 720px;
   }
-
   @media (min-width: 992px) {
     max-width: 940px;
   }
-
   @media (min-width: 1200px) {
     max-width: 1140px;
   }
@@ -55,6 +49,14 @@ const Logo = styled(CustomLink)`
   padding-top: 0 !important;
   padding-bottom: 0.25rem;
   color: #5cb85c !important;
+`;
+
+const NavbarList = styled("ul")`
+  float: right !important;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 `;
 
 const NavbarItem = styled("li")`
@@ -75,7 +77,7 @@ const Navbar = () => {
     <NavbarContainer>
       <NavbarPresenter>
         <Logo href="/" as="/" onClick={handleClick}>
-          새에덴교회
+          conduit
         </Logo>
         <NavbarList>
           <NavbarItem>
@@ -87,13 +89,13 @@ const Navbar = () => {
             <NavbarItem>
               <NavLink href="/editor/new" as="/editor/new">
                 <i className="ion-compose" />
-                &nbsp;작성
+                &nbsp;New Post
               </NavLink>
             </NavbarItem>
             <NavbarItem>
               <NavLink href="/user/settings" as="/user/settings">
                 <i className="ion-gear-a" />
-                &nbsp;환경설정
+                &nbsp;Settings
               </NavLink>
             </NavbarItem>
             <NavbarItem>
@@ -109,12 +111,12 @@ const Navbar = () => {
           <Maybe test={!isLoggedIn}>
             <NavbarItem>
               <NavLink href="/user/login" as="/user/login">
-                로그인
+                Sign in
               </NavLink>
             </NavbarItem>
             <NavbarItem>
               <NavLink href="/user/register" as="/user/register">
-                회원가입
+                Sign up
               </NavLink>
             </NavbarItem>
           </Maybe>
