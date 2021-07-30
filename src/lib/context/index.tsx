@@ -3,10 +3,10 @@ import React from "react";
 import PageContext from "./PageContext";
 import PageCountContext from "./PageCountContext";
 
-const ContextProvider = ({ children }) => {
+const ContextProvider = ({ children }) => (
   <PageContext>
     <PageCountContext>{children}</PageCountContext>
-  </PageContext>;
-};
+  </PageContext>
+);
 
 export default ContextProvider;
